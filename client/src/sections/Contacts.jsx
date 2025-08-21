@@ -19,7 +19,7 @@ export function Contacts() {
             <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: 8, overflow: 'hidden' }}>
               <iframe
                 title="map"
-                src="https://yandex.com/map-widget/v1/?um=constructor%3A5d5d6a8b79f4a3e9a5d1e6a015f3f8dd46b141adff34a79f609ff0f9e56ff0e3&amp;source=constructor"
+                src="https://www.google.com/maps?q=123007, Москва, ул. 5-я Магистральная, д.12&output=embed"
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
                 loading="lazy"
                 allowFullScreen

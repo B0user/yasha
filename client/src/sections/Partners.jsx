@@ -1,9 +1,22 @@
 import { motion } from 'framer-motion';
+import partner1 from '../assets/partner1.png';
+import partner2 from '../assets/partner2.png';
+import partner3 from '../assets/partner3.png';
+import partner4 from '../assets/partner4.png';
+import partner5 from '../assets/partner5.png';
+import partner6 from '../assets/partner6.png';
+import partner7 from '../assets/partner7.png';
+import partner8 from '../assets/partner8.png';
 
 const partners = [
-  { name: 'ГК «Самолет»', img: 'https://placehold.co/200x80/edf2f7/0a2540?text=%D0%A1%D0%B0%D0%BC%D0%BE%D0%BB%D0%B5%D1%82' },
-  { name: 'ЗИАС', img: 'https://placehold.co/200x80/e2e8f0/0a2540?text=%D0%97%D0%98%D0%90%D0%A1' },
-  { name: 'Профметалл', img: 'https://placehold.co/200x80/e2e8f0/0a2540?text=%D0%9F%D1%80%D0%BE%D1%84%D0%BC%D0%B5%D1%82%D0%B0%D0%BB%D0%BB' },
+  { name: 'Партнёр 1', img: partner1 },
+  { name: 'Партнёр 2', img: partner2 },
+  { name: 'Партнёр 3', img: partner3 },
+  { name: 'Партнёр 4', img: partner4 },
+  { name: 'Партнёр 5', img: partner5 },
+  { name: 'Партнёр 6', img: partner6 },
+  { name: 'Партнёр 7', img: partner7 },
+  { name: 'Партнёр 8', img: partner8 },
 ];
 
 export function Partners() {

@@ -1,11 +1,16 @@
 import { motion } from 'framer-motion';
+import ongoing1 from '../assets/ongoingproject1.png';
+import ongoing2 from '../assets/ongoingproject2.png';
+import ongoing3 from '../assets/ongoingproject3.png';
+import ongoing4 from '../assets/ongoingproject4.png';
+import ongoing5 from '../assets/ongoingproject5.png';
 
 const active = [
-  { title: 'Строительство верфи', subtitle: 'КМ и КМД НВФ, заказчик: Профметалл', img: 'https://images.unsplash.com/photo-1464961605736-6a34b1230231?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Имущественный комплекс №8', subtitle: 'КМ, КМД, заказчик: Профметалл', img: 'https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'ЖК «Афи парк Вороцновский»', subtitle: 'КМ и КМД НВФ, заказчик: Профметалл', img: 'https://images.unsplash.com/photo-1499914485622-a88fac536970?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Корпус инфекционного отделения ЯНАО', subtitle: 'Раскладка облицовки фасада', img: 'https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Тарко-Салинская ЦРБ', subtitle: 'Раскладка облицовки фасада', img: 'https://images.unsplash.com/photo-1464961605736-6a34b1230231?q=80&w=1200&auto=format&fit=crop' },
+  { title: 'Строительство верфи', subtitle: 'КМ и КМД НВФ, заказчик: Профметалл', img: ongoing1 },
+  { title: 'Имущественный комплекс №8', subtitle: 'КМ, КМД, заказчик: Профметалл', img: ongoing2 },
+  { title: 'ЖК «Афи парк Вороцновский»', subtitle: 'КМ и КМД НВФ, заказчик: Профметалл', img: ongoing3 },
+  { title: 'Корпус инфекционного отделения ЯНАО', subtitle: 'Раскладка облицовки фасада', img: ongoing4 },
+  { title: 'Тарко-Салинская ЦРБ', subtitle: 'Раскладка облицовки фасада', img: ongoing5 },
 ];
 
 export function ActiveProjects() {

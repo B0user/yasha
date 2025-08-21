@@ -1,13 +1,20 @@
 import { motion } from 'framer-motion';
+import imgOstafyevo from '../assets/Остафьево.png';
+import imgSputnik from '../assets/СПУТНИК.png';
+import imgCenter from '../assets/Центр инноваций и импортозамещения.png';
+import imgRudnevo from '../assets/Промзона «Руднево».png';
+import imgHouses from '../assets/Жилые дома.png';
+import imgNovayaRazvilka from '../assets/ЖК «НОВАЯ РАЗВИЛКА».png';
+import imgKindergarten from '../assets/Детское дошкольное учреждение .png';
 
 const completed = [
-  { title: 'ЖК «Остафьево»', subtitle: 'КМ НВФ, заказчик: ГК «Самолет»', img: 'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'ЖК «СПУТНИК»', subtitle: 'КМ НВФ, заказчик: ГК «Самолет»', img: 'https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Центр инноваций и импортозамещения', subtitle: 'КМ, фахверки, заказчик: ГК «Самолет»', img: 'https://images.unsplash.com/photo-1487730116645-74489c95b41b?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Промзона «Руднево»', subtitle: 'КМ, КМД фасадов, заказчик: ЗИАС', img: 'https://images.unsplash.com/photo-1499914485622-a88fac536970?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Жилые дома', subtitle: 'Разработка КМ НВФ, заказчик: ЗИАС', img: 'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'ЖК «Новая Развилка»', subtitle: 'Светопрозрачные конструкции', img: 'https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Детский сад', subtitle: 'Светопрозрачные конструкции', img: 'https://images.unsplash.com/photo-1487730116645-74489c95b41b?q=80&w=1200&auto=format&fit=crop' },
+  { title: 'ЖК «Остафьево»', subtitle: 'КМ НВФ, заказчик: ГК «Самолет»', img: imgOstafyevo },
+  { title: 'ЖК «СПУТНИК»', subtitle: 'КМ НВФ, заказчик: ГК «Самолет»', img: imgSputnik },
+  { title: 'Центр инноваций и импортозамещения', subtitle: 'КМ, фахверки, заказчик: ГК «Самолет»', img: imgCenter },
+  { title: 'Промзона «Руднево»', subtitle: 'КМ, КМД фасадов, заказчик: ЗИАС', img: imgRudnevo },
+  { title: 'Жилые дома', subtitle: 'Разработка КМ НВФ, заказчик: ЗИАС', img: imgHouses },
+  { title: 'ЖК «Новая Развилка»', subtitle: 'Светопрозрачные конструкции', img: imgNovayaRazvilka },
+  { title: 'Детский сад', subtitle: 'Светопрозрачные конструкции', img: imgKindergarten },
 ];
 
 export function Projects() {
