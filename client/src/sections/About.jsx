@@ -11,7 +11,7 @@ export function About() {
         </motion.p>
         <div className="grid grid-2">
           <motion.div className="card" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="muted">Основана: 2010</p>
+            <p className="muted">Основана: 2023</p>
             <p className="muted">География проектов: Москва, Московская область</p>
             <p className="muted">Основные направления: проектная документация, строительные работы, авторский надзор.</p>
           </motion.div>
