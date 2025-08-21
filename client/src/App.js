@@ -14,8 +14,8 @@ function App() {
     { href: '#about', label: 'О компании' },
     { href: '#services', label: 'Услуги' },
     { href: '#partners', label: 'Партнёры' },
-    { href: '#projects', label: 'Проекты' },
-    { href: '#active-projects', label: 'Действующие' },
+    { href: '#projects', label: 'Проектирование' },
+    { href: '#smr', label: 'СМР' },
     { href: '#benefits', label: 'Почему мы?' },
     { href: '#contacts', label: 'Контакты' },
   ];
