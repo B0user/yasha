@@ -24,12 +24,14 @@ export function Partners() {
     <section className="section" id="partners">
       <div className="container">
         <motion.h2 className="section-title" initial={{ y: 12, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}>Наши партнёры</motion.h2>
-        <div className="partners">
-          {partners.map((p) => (
-            <motion.div key={p.name} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-              <img src={p.img} alt={p.name} />
-            </motion.div>
-          ))}
+        <div className="partners-marquee">
+          <div className="partners-track">
+            {[...partners, ...partners].map((p, idx) => (
+              <div className="partner-item" key={`${p.name}-${idx}`}>
+                <img src={p.img} alt={p.name} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

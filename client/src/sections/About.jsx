@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import logo from '../assets/logo.jpeg';
 
 export function About() {
   return (
@@ -10,12 +11,14 @@ export function About() {
         </motion.p>
         <div className="grid grid-2">
           <motion.div className="card" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="muted">Основана: [год]</p>
+            <p className="muted">Основана: 2010</p>
             <p className="muted">География проектов: Москва, Московская область</p>
             <p className="muted">Основные направления: проектная документация, строительные работы, авторский надзор.</p>
           </motion.div>
           <motion.div className="card" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div style={{height: 180, background: 'linear-gradient(135deg, #e2e8f0, #cbd5e1)', borderRadius: 8}} />
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 180 }}>
+              <img src={logo} alt="Логотип УЗНУР-ПРОДЖЕКТ" className="about-logo" />
+            </div>
           </motion.div>
         </div>
       </div>
