@@ -21,7 +21,7 @@ export function Projects() {
   return (
     <section className="section" id="projects">
       <div className="container">
-        <motion.h2 className="section-title" initial={{ y: 12, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}>Реализованные проекты</motion.h2>
+        <motion.h2 className="section-title" initial={{ y: 12, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}>Проектирование — завершенные</motion.h2>
         <div className="gallery">
           {completed.map((p, idx) => (
             <motion.div key={p.title} className="gallery-card" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.05 }}>

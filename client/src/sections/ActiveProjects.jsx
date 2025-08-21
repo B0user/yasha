@@ -17,7 +17,7 @@ export function ActiveProjects() {
   return (
     <section className="section" id="active-projects">
       <div className="container">
-        <motion.h2 className="section-title" initial={{ y: 12, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}>Действующие проекты</motion.h2>
+        <motion.h2 className="section-title" initial={{ y: 12, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}>Проектирование — действующие</motion.h2>
         <div className="gallery">
           {active.map((p, idx) => (
             <motion.div key={p.title} className="gallery-card" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.05 }}>

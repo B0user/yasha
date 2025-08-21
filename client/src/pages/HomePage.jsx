@@ -6,6 +6,7 @@ import { Services } from '../sections/Services';
 import { Partners } from '../sections/Partners';
 import { Projects } from '../sections/Projects';
 import { ActiveProjects } from '../sections/ActiveProjects';
+import { SMR } from '../sections/SMR';
 import { Benefits } from '../sections/Benefits';
 import { Contacts } from '../sections/Contacts';
 
@@ -19,6 +20,7 @@ export function HomePage() {
         <Partners />
         <Projects />
         <ActiveProjects />
+        <SMR />
         <Benefits />
         <Contacts />
       </motion.div>
