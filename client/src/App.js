@@ -12,6 +12,7 @@ function App() {
   const toggleMenu = () => setMenuOpen((v) => !v);
 
   const sections = [
+    { href: '#cta', label: 'Заявка' },
     { href: '#about', label: 'О компании' },
     { href: '#services', label: 'Услуги' },
     { href: '#partners', label: 'Партнёры' },

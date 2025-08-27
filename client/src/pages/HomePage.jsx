@@ -8,6 +8,7 @@ import { Projects } from '../sections/Projects';
 import { SMR } from '../sections/SMR';
 import { Benefits } from '../sections/Benefits';
 import { Contacts } from '../sections/Contacts';
+import { CTAForm } from '../sections/CTAForm';
 
 export function HomePage() {
   return (
@@ -20,6 +21,7 @@ export function HomePage() {
         <Projects />
         <SMR />
         <Benefits />
+        <CTAForm />
         <Contacts />
       </motion.div>
     </main>

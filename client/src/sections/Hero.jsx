@@ -24,7 +24,7 @@ export function Hero() {
           Разработка проектной и рабочей документации, строительство, авторский надзор
         </motion.p>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-          <a className="btn" href="#contacts">Связаться с нами</a>
+          <a className="btn" href="#cta">Связаться с нами</a>
         </motion.div>
       </div>
     </section>
