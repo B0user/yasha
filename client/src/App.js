@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { HomePage } from './pages/HomePage';
 import logo from './assets/logo_stop.gif';
+import logo2 from './assets/logo2.gif';
 // import logoVideo from './assets/logo.mp4';
 // import logoStatic from "@/assets/logo.png";
 
@@ -29,6 +30,7 @@ function App() {
         <div className="container nav">
           <Link to="/" className="brand" aria-label="ООО УЗНУР-ПРОДЖЕКТ" onClick={closeMenu}>
             <img src={logo} alt="Логотип УЗНУР-ПРОДЖЕКТ" className="brand-logo" />
+            <img src={logo2} alt="Логотип УЗНУР-ПРОДЖЕКТ" className="brand-logo" />
             {/* <video
               src={logoVideo}
               autoPlay
