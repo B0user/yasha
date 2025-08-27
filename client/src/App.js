@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { HomePage } from './pages/HomePage';
-import logo from './assets/logo_reverse.gif';
+import logo from './assets/logo_stop.gif';
 // import logoVideo from './assets/logo.mp4';
 // import logoStatic from "@/assets/logo.png";
 
