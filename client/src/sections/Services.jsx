@@ -26,7 +26,7 @@ const services = [
 
 export function Services() {
   return (
-    <section className="section section-alt" id="services">
+    <section className="section section-contrast" id="services">
       <div className="container">
         <motion.h2 className="section-title" initial={{ y: 12, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}>Наши услуги</motion.h2>
         <div className="cards">
