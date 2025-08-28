@@ -4,7 +4,7 @@ export function Contacts() {
   const MAIN_DIRECTOR_EMAIL = 'sfera_krs@mail.ru';
   const SECOND_DIRECTOR_EMAIL = 'yashar.nuriev@mail.ru';
   return (
-    <section className="section" id="contacts">
+    <section className="section section-contrast" id="contacts">
       <div className="container">
         <motion.h2 className="section-title" initial={{ y: 12, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}>Работайте с нами</motion.h2>
         <div className="grid grid-2">

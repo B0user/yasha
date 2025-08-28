@@ -21,7 +21,7 @@ const partners = [
 
 export function Partners() {
   return (
-    <section className="section" id="partners">
+    <section className="section section-dark" id="partners">
       <div className="container">
         <motion.h2 className="section-title" initial={{ y: 12, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}>Наши партнёры</motion.h2>
         <div className="partners-marquee">

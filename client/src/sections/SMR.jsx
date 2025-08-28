@@ -46,7 +46,7 @@ const smrProjects = [
 
 export function SMR() {
   return (
-    <section className="section" id="smr">
+    <section className="section section-contrast" id="smr">
       <div className="container">
         <motion.h2
           className="section-title"
