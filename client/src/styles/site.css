@@ -3,8 +3,8 @@
   --color-bg: #ffffff;            /* page background */
   --color-surface: #ffffff;       /* cards, panels */
   --color-border: #e2e8f0;        /* dividers, outlines */
-  --color-bg-alt: #fbfbfb;        /* section alternate bg */
-  --color-bg-contrast: #f5f6f7;   /* slightly darker alt */
+  --color-bg-alt: #eeeeee;        /* section alternate bg */
+  --color-bg-contrast: #eaeaea;   /* slightly darker alt */
   --color-text: #0f172a;          /* primary text */
   --color-muted: #3d4147;         /* secondary text */
 
