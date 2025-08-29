@@ -3,8 +3,8 @@
   --color-bg: #ffffff;            /* page background */
   --color-surface: #ffffff;       /* cards, panels */
   --color-border: #e2e8f0;        /* dividers, outlines */
-  --color-bg-alt: #eeeeee;        /* section alternate bg */
-  --color-bg-contrast: #eaeaea;   /* slightly darker alt */
+  --color-bg-alt: #e5e5e5;        /* section alternate bg */
+  --color-bg-contrast: #dbdbdb;   /* slightly darker alt */
   --color-text: #0f172a;          /* primary text */
   --color-muted: #3d4147;         /* secondary text */
 
@@ -115,8 +115,8 @@ header.site-header { position: sticky; top: 0; z-index: 50; background: rgba(255
 .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--color-accent); }
 .brand-logo { height: 28px; width: auto; border-radius: 8px; object-fit: contain; }
-@media (min-width: 640px) { .brand-logo { height: 32px; } }
-@media (min-width: 1024px) { .brand-logo { height: 40px; } }
+@media (min-width: 640px) { .brand-logo { height: 55px; } }
+@media (min-width: 1024px) { .brand-logo { height: 55px; } }
 .brand-badge { display: none; }
 .nav-links { display: none; gap: 16px; }
 @media (min-width: 1024px) { .nav-links { display: flex; } }
