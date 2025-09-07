@@ -48,7 +48,7 @@ export function Projects() {
         </motion.h2>
         <Box sx={{ 
         height: "100%",
-        maxWidth: { xs: "24em", md: 700 }, }}>
+        maxWidth: { xs: "24em", md: "100%" }, }}>
           <Swiper
             modules={[Pagination]}
             pagination={{ clickable: true }}
