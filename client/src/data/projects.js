@@ -30,8 +30,8 @@ export const smrProjects = [
       { before: "/smr/before/32.jpeg", after: "/smr/after/32.jpeg" },
       { before: "/smr/before/33.jpeg", after: "/smr/after/33.jpeg" },
       { before: "/smr/before/34.jpeg", after: "/smr/after/34.jpeg" },
-      { before: "/smr/before/35.jpeg", after: "/smr/after/35.jpeg" },
-      { before: "/smr/before/36.jpeg", after: "/smr/after/36.jpeg" },
+      // { before: "/smr/before/35.jpeg", after: "/smr/after/35.jpeg" },
+      // { before: "/smr/before/36.jpeg", after: "/smr/after/36.jpeg" },
     ],
   },
 ];

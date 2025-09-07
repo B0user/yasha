@@ -1,11 +1,25 @@
 // src/components/BeforeAfterCard.jsx
-import { Card, CardContent, Typography, Box } from "@mui/material";
+import { useState } from "react";
+import { Card, CardContent, Typography, Box, Dialog } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
 export function BeforeAfterCard({ project }) {
+  const [open, setOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState(null);
+
+  const handleOpen = (src) => {
+    setActiveImage(src);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setActiveImage(null);
+  };
+
   return (
     <Card
       sx={{
@@ -58,7 +72,10 @@ export function BeforeAfterCard({ project }) {
                   }}
                 >
                   {/* Before */}
-                  <Box sx={{ width: "100%", position: "relative", mb: 2 }}>
+                  <Box
+                    sx={{ width: "100%", position: "relative", mb: 2, cursor: "pointer" }}
+                    onClick={() => handleOpen(pair.before)}
+                  >
                     <img
                       src={pair.before}
                       alt={`${project.title} — до`}
@@ -86,7 +103,10 @@ export function BeforeAfterCard({ project }) {
                   </Box>
 
                   {/* After */}
-                  <Box sx={{ width: "100%", position: "relative" }}>
+                  <Box
+                    sx={{ width: "100%", position: "relative", cursor: "pointer" }}
+                    onClick={() => handleOpen(pair.after)}
+                  >
                     <img
                       src={pair.after}
                       alt={`${project.title} — после`}
@@ -118,6 +138,34 @@ export function BeforeAfterCard({ project }) {
           </Swiper>
         </Box>
       </CardContent>
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        maxWidth="xl"
+        PaperProps={{
+            sx: {
+            backgroundColor: "rgba(0,0,0,0.9)", // dark background
+            boxShadow: "none",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            },
+        }}
+        >
+        {activeImage && (
+            <img
+            src={activeImage}
+            alt="Preview"
+            style={{
+                maxWidth: "90vw",   // fit within viewport width
+                maxHeight: "90vh",  // fit within viewport height
+                borderRadius: 12,
+            }}
+            />
+        )}
+        </Dialog>
+
     </Card>
   );
 }
