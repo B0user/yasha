@@ -1,16 +1,23 @@
+
+import { Box } from "@mui/material";
 import { motion } from 'framer-motion';
-import imgOstafyevo from '../assets/Остафьево.png';
-import imgSputnik from '../assets/СПУТНИК.png';
-import imgCenter from '../assets/Центр инноваций и импортозамещения.png';
-import imgRudnevo from '../assets/Промзона «Руднево».png';
-import imgHouses from '../assets/Жилые дома.png';
-import imgNovayaRazvilka from '../assets/ЖК «НОВАЯ РАЗВИЛКА».png';
-import imgKindergarten from '../assets/Детское дошкольное учреждение .png';
-import ongoing1 from '../assets/ongoingproject1.png';
-import ongoing2 from '../assets/ongoingproject2.png';
-import ongoing3 from '../assets/ongoingproject3.png';
-import ongoing4 from '../assets/ongoingproject4.png';
-import ongoing5 from '../assets/ongoingproject5.png';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import imgOstafyevo from '../assets/projects/Остафьево.png';
+import imgSputnik from '../assets/projects/СПУТНИК.png';
+import imgCenter from '../assets/projects/Центр инноваций и импортозамещения.png';
+import imgRudnevo from '../assets/projects/Промзона «Руднево».png';
+import imgHouses from '../assets/projects/Жилые дома.png';
+import imgNovayaRazvilka from '../assets/projects/ЖК «НОВАЯ РАЗВИЛКА».png';
+import imgKindergarten from '../assets/projects/Детское дошкольное учреждение .png';
+import ongoing1 from '../assets/projects/ongoingproject1.png';
+import ongoing2 from '../assets/projects/ongoingproject2.png';
+import ongoing3 from '../assets/projects/ongoingproject3.png';
+import ongoing4 from '../assets/projects/ongoingproject4.png';
+import ongoing5 from '../assets/projects/ongoingproject5.png';
 
 const completed = [
   { title: 'ЖК «Остафьево»', subtitle: 'КМ НВФ, заказчик: ГК «Самолет»', img: imgOstafyevo },
@@ -31,18 +38,48 @@ export function Projects() {
   return (
     <section className="section" id="projects">
       <div className="container">
-        <motion.h2 className="section-title" initial={{ y: 12, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}>Проектирование</motion.h2>
-        <div className="gallery">
-          {completed.map((p, idx) => (
-            <motion.div key={p.title} className="gallery-card" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.05 }}>
-              <img src={p.img} alt={p.title} />
-              <div className="info">
-                <div className="card-title">{p.title}</div>
-                <div className="muted">{p.subtitle}</div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <motion.h2
+          className="section-title"
+          initial={{ y: 12, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          Проектирование
+        </motion.h2>
+        <Box sx={{ 
+        height: "100%",
+        maxWidth: { xs: "24em", md: 700 }, }}>
+          <Swiper
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            spaceBetween={24}
+            slidesPerView={1}
+            breakpoints={{
+              900: { slidesPerView: 3 },
+              600: { slidesPerView: 2 }
+            }}
+            style={{ paddingBottom: "40px" }}
+          >
+            {completed.map((p, idx) => (
+              <SwiperSlide key={p.title}>
+                <motion.div
+                  className="gallery-card"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                >
+                  <img src={p.img} alt={p.title} style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 8 }} />
+                  <div className="info">
+                    <div className="card-title">{p.title}</div>
+                    <div className="muted">{p.subtitle}</div>
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Box>
+        
       </div>
     </section>
   );
