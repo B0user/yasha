@@ -6,8 +6,8 @@ export const smrProjects = [
     description:
       "Разработка рабочей документации разделов КМ и КМД с последующим монтажом навесного вентилируемого фасада. Адрес: г. Москва, Зеленоград, площадка Алабушево, ул. Конструктора Лукина, 14.",
     pairs: [
-      { before: "/smr/before/11.jpeg", after: "/smr/after/11.webp" },
-      { before: "/smr/before/12.jpeg", after: "/smr/after/12.webp" },
+      { before: "/smr/before/11.webp", after: "/smr/after/11.webp" },
+      { before: "/smr/before/12.webp", after: "/smr/after/12.webp" },
     ],
   },
   {
@@ -16,8 +16,8 @@ export const smrProjects = [
     description:
       "Устройство гидроизоляции стилобатной части здания многоквартирного жилого дома. Адрес: г. Москва, ул. Союзная, д. 22.",
     pairs: [
-      { before: "/smr/before/21.jpeg", after: "/smr/after/21.webp" },
-      { before: "/smr/before/22.jpeg", after: "/smr/after/22.webp" },
+      { before: "/smr/before/21.webp", after: "/smr/after/21.webp" },
+      { before: "/smr/before/22.webp", after: "/smr/after/22.webp" },
     ],
   },
   {
@@ -26,12 +26,12 @@ export const smrProjects = [
     description:
       "Капитальный ремонт 3-х подъездов многоквартирного жилого дома. Адрес: г. Москва, пр-т Вернадского, д. 93.",
     pairs: [
-      { before: "/smr/before/31.jpeg", after: "/smr/after/31.webp" },
-      { before: "/smr/before/32.jpeg", after: "/smr/after/32.webp" },
-      { before: "/smr/before/33.jpeg", after: "/smr/after/33.webp" },
-      { before: "/smr/before/34.jpeg", after: "/smr/after/34.webp" },
-      // { before: "/smr/before/35.jpeg", after: "/smr/after/35.webp" },
-      // { before: "/smr/before/36.jpeg", after: "/smr/after/36.webp" },
+      { before: "/smr/before/31.webp", after: "/smr/after/31.webp" },
+      { before: "/smr/before/32.webp", after: "/smr/after/32.webp" },
+      { before: "/smr/before/33.webp", after: "/smr/after/33.webp" },
+      { before: "/smr/before/34.webp", after: "/smr/after/34.webp" },
+      // { before: "/smr/before/35.webp", after: "/smr/after/35.webp" },
+      // { before: "/smr/before/36.webp", after: "/smr/after/36.webp" },
     ],
   },
 ];

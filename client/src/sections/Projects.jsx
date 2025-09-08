@@ -6,18 +6,18 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import imgOstafyevo from '../assets/projects/Остафьево.png';
-import imgSputnik from '../assets/projects/СПУТНИК.png';
-import imgCenter from '../assets/projects/Центр инноваций и импортозамещения.png';
-import imgRudnevo from '../assets/projects/Промзона «Руднево».png';
-import imgHouses from '../assets/projects/Жилые дома.png';
-import imgNovayaRazvilka from '../assets/projects/ЖК «НОВАЯ РАЗВИЛКА».png';
-import imgKindergarten from '../assets/projects/Детское дошкольное учреждение .png';
-import ongoing1 from '../assets/projects/ongoingproject1.png';
-import ongoing2 from '../assets/projects/ongoingproject2.png';
-import ongoing3 from '../assets/projects/ongoingproject3.png';
-import ongoing4 from '../assets/projects/ongoingproject4.png';
-import ongoing5 from '../assets/projects/ongoingproject5.png';
+import imgOstafyevo from '../assets/projects/Остафьево.webp';
+import imgSputnik from '../assets/projects/СПУТНИК.webp';
+import imgCenter from '../assets/projects/Центр инноваций и импортозамещения.webp';
+import imgRudnevo from '../assets/projects/Промзона «Руднево».webp';
+import imgHouses from '../assets/projects/Жилые дома.webp';
+import imgNovayaRazvilka from '../assets/projects/ЖК «НОВАЯ РАЗВИЛКА».webp';
+import imgKindergarten from '../assets/projects/Детское дошкольное учреждение .webp';
+import ongoing1 from '../assets/projects/ongoingproject1.webp';
+import ongoing2 from '../assets/projects/ongoingproject2.webp';
+import ongoing3 from '../assets/projects/ongoingproject3.webp';
+import ongoing4 from '../assets/projects/ongoingproject4.webp';
+import ongoing5 from '../assets/projects/ongoingproject5.webp';
 
 const completed = [
   { title: 'ЖК «Остафьево»', subtitle: 'КМ НВФ, заказчик: ГК «Самолет»', img: imgOstafyevo },

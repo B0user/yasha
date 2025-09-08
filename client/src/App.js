@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { HomePage } from './pages/HomePage';
-import logo from './assets/logo_stop.gif';
+import logo from './assets/logo_stop.webp';
 
 
 function App() {

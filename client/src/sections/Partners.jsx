@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import partner1 from '../assets/partners/partner1.png';
-import partner2 from '../assets/partners/partner2.png';
-import partner3 from '../assets/partners/partner3.png';
-import partner4 from '../assets/partners/partner4.png';
-import partner5 from '../assets/partners/partner5.png';
-import partner6 from '../assets/partners/partner6.png';
-import partner7 from '../assets/partners/partner7.png';
-import partner8 from '../assets/partners/partner8.png';
+import partner1 from '../assets/partners/partner1.webp';
+import partner2 from '../assets/partners/partner2.webp';
+import partner3 from '../assets/partners/partner3.webp';
+import partner4 from '../assets/partners/partner4.webp';
+import partner5 from '../assets/partners/partner5.webp';
+import partner6 from '../assets/partners/partner6.webp';
+import partner7 from '../assets/partners/partner7.webp';
+import partner8 from '../assets/partners/partner8.webp';
 
 const partners = [
   { name: 'Партнёр 1', img: partner1 },
