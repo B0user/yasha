@@ -19,7 +19,7 @@ const partners = [
   { name: 'Партнёр 8', img: partner8 },
 ];
 
-export function Partners() {
+export default function Partners() {
   return (
     <section className="section section-dark" id="partners">
       <div className="container">

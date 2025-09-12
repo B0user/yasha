@@ -4,7 +4,9 @@ import { BeforeAfterCard } from "./components/BeforeAfterCard";
 
 export function SMR() {
   return (
-    <section className="section section-contrast" id="smr">
+    <section 
+    sx={{ bgcolor: '#f8f9fa' }}
+    className="section" id="smr">
       <div className="container">
         <motion.h2
           className="section-title"
