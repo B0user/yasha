@@ -804,6 +804,14 @@ export function LandingVersion1() {
                             >
                               +7 (977) 128-41-60
                             </Button>
+                            <Button
+                              variant="outlined"
+                              startIcon={<Email />}
+                              href="mailto:yashar.nuriev@mail.ru"
+                              sx={{ borderColor: '#3498db', color: '#3498db' }}
+                            >
+                              Email
+                            </Button>
                           </Stack>
                         </Box>
                         
