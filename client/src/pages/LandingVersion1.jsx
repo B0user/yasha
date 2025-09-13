@@ -747,9 +747,9 @@ export function LandingVersion1() {
             </Typography>
             
             <Grid container spacing={4}>
-              <Grid item xs={12}>
+              <Grid item xs={12} sx={{ width: '100%' }}>
                 <Card sx={{ p: 4 }}>
-                  <Grid container spacing={4}>
+                  <Grid container spacing={12}>
                     <Grid item xs={12} md={6}>
                       <Box>
                         <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2, color: '#2c3e50' }}>
