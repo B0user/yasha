@@ -7,6 +7,8 @@ import partner5 from '../assets/partners/partner5.webp';
 import partner6 from '../assets/partners/partner6.webp';
 import partner7 from '../assets/partners/partner7.webp';
 import partner8 from '../assets/partners/partner8.webp';
+import partner9 from '../assets/partners/partner9.webp';
+import partner10 from '../assets/partners/partner10.webp';
 
 const partners = [
   { name: 'Партнёр 1', img: partner1 },
@@ -17,6 +19,8 @@ const partners = [
   { name: 'Партнёр 6', img: partner6 },
   { name: 'Партнёр 7', img: partner7 },
   { name: 'Партнёр 8', img: partner8 },
+  { name: 'Партнёр 9', img: partner9 },
+  { name: 'Партнёр 10', img: partner10 },
 ];
 
 export default function Partners() {

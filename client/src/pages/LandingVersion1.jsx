@@ -288,7 +288,7 @@ export function LandingVersion1() {
                 fontSize: { xs: '1.1rem', md: '1.5rem' }
               }}
             >
-              Разрабатываем КМ и КМД, выполняем СМР и авторский надзор. Смета за 1 день, встреча в течение 48 часов.
+              Разрабатываем КМ и КМД, выполняем Строительно-монтажные работы и авторский надзор. Смета за 1 день, встреча в течение 48 часов.
             </Typography>
 
             <Stack
@@ -386,7 +386,7 @@ export function LandingVersion1() {
               {
                 icon: <Business sx={{ fontSize: 48, color: '#3498db' }} />,
                 title: 'Работаем с федеральными девелоперами',
-                subtitle: 'Самолет, ЗИАС, Профметалл'
+                subtitle: 'Самолет, ЗИАС, Профметалл, АНТ ЯПЫ, АНТТЕК, ТСЖ, ЖСК'
               },
               {
                 icon: <Speed sx={{ fontSize: 48, color: '#e74c3c' }} />,
@@ -515,10 +515,10 @@ export function LandingVersion1() {
                   targetSection: 'projects'
                 },
                 {
-                  icon: <Engineering sx={{ fontSize: 40, color: '#9b59b6' }} />,
-                  title: 'Разработка КМ и КМД',
-                  description: 'Конструкции металлические и конструкции металлические деталировочные',
-                  targetSection: 'projects'
+                  icon: <Construction sx={{ fontSize: 40, color: '#e74c3c' }} />,
+                  title: 'Строительно-монтажные работы',
+                  description: 'Фасады, светопрозрачные конструкции, отделочные работы, ремонт кровель, работы по внутренним инженерным сетям',
+                  targetSection: 'smr'
                 },
                 {
                   icon: <Visibility sx={{ fontSize: 40, color: '#27ae60' }} />,
@@ -527,16 +527,10 @@ export function LandingVersion1() {
                   targetSection: 'contacts'
                 },
                 {
-                  icon: <Construction sx={{ fontSize: 40, color: '#e74c3c' }} />,
-                  title: 'Строительно-монтажные работы',
-                  description: 'Фасады, светопрозрачные конструкции, внутренние сети',
-                  targetSection: 'smr'
-                },
-                {
-                  icon: <Construction sx={{ fontSize: 40, color: '#f39c12' }} />,
-                  title: 'Металлоконструкции, светопрозрачные конструкции',
-                  description: 'Изготовление и монтаж металлических и светопрозрачных конструкций',
-                  targetSection: 'smr'
+                  icon: <Engineering sx={{ fontSize: 40, color: '#9b59b6' }} />,
+                  title: 'Разработка КМ и КМД',
+                  description: 'Проектирование, изготовление, поставка и монтаж',
+                  targetSection: 'projects'
                 }
               ].map((service, index) => (
                 <motion.div
