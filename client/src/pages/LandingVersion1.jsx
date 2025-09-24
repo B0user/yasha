@@ -50,6 +50,11 @@ import Partners from "../sections/Partners";
 import { Projects } from '../sections/Projects';
 import { Contacts } from '../sections/Contacts';
 import { SMR } from '../sections/SMR';
+import {
+  createFieldUpdateHandler,
+  createSubmitHandler
+} from '../utils/leadHandlers';
+import axios from 'axios';
 import logo from '../assets/logo_stop.webp';
 
 export function LandingVersion1() {
@@ -87,15 +92,35 @@ export function LandingVersion1() {
     setMobileOpen(false);
   };
 
-  const updateField = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const updateField = createFieldUpdateHandler(setForm);
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const subject = 'Заявка с сайта УЗНУР-ПРОДЖЕКТ';
-    const body = `Имя: ${form.name}\nТелефон: ${form.phone}\nEmail: ${form.email}\nСообщение: ${form.message}`;
-    window.location.href = `mailto:sfera_krs@mail.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    try {
+      console.log(form);
+      const response = await axios.post('http://localhost:2025/api/leads', {
+        name: form.name || '',
+        email: form.email || '',
+        phone: form.phone || '',
+        description: form.message || '',
+        form_type: 'extended',
+        utm: {
+          source: new URLSearchParams(window.location.search).get('utm_source') || '',
+          medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
+          campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+          content: new URLSearchParams(window.location.search).get('utm_content') || '',
+          term: new URLSearchParams(window.location.search).get('utm_term') || ''
+        }
+      });
+
+      if (response.data.status === 'success') {
+        setForm({ name: '', phone: '', email: '', message: '' });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Произошла ошибка при отправке заявки. Попробуйте еще раз.');
+    }
   };
 
   const scrollToForm = () => {
@@ -693,18 +718,6 @@ export function LandingVersion1() {
                   fullWidth
                   variant="outlined"
                 />
-                <Button
-                  variant="outlined"
-                  startIcon={<AttachFile />}
-                  sx={{
-                    alignSelf: 'flex-start',
-                    borderColor: '#7f8c8d',
-                    color: '#7f8c8d',
-                    '&:hover': { borderColor: '#34495e', bgcolor: 'rgba(52,73,94,0.1)' }
-                  }}
-                >
-                  Прикрепить файл проекта
-                </Button>
                 <Button
                   variant="contained"
                   type="submit"

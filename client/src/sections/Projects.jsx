@@ -20,18 +20,30 @@ import ongoing4 from '../assets/projects/ongoingproject4.webp';
 import ongoing5 from '../assets/projects/ongoingproject5.webp';
 
 const completed = [
-  { title: 'ЖК «Остафьево»', subtitle: 'КМ НВФ, заказчик: ГК «Самолет»', img: imgOstafyevo },
-  { title: 'ЖК «СПУТНИК»', subtitle: 'КМ НВФ, заказчик: ГК «Самолет»', img: imgSputnik },
-  { title: 'Центр инноваций и импортозамещения', subtitle: 'КМ, фахверки, заказчик: ГК «Самолет»', img: imgCenter },
-  { title: 'Промзона «Руднево»', subtitle: 'КМ, КМД фасадов, заказчик: ЗИАС', img: imgRudnevo },
-  { title: 'Жилые дома', subtitle: 'Разработка КМ НВФ, заказчик: ЗИАС', img: imgHouses },
-  { title: 'ЖК «Новая Развилка»', subtitle: 'Светопрозрачные конструкции', img: imgNovayaRazvilka },
-  { title: 'Детский сад', subtitle: 'Светопрозрачные конструкции', img: imgKindergarten },
-  { title: 'Строительство верфи', subtitle: 'КМ и КМД НВФ, заказчик: Профметалл', img: ongoing1 },
-  { title: 'Имущественный комплекс №8', subtitle: 'КМ, КМД, заказчик: Профметалл', img: ongoing2 },
-  { title: 'ЖК «Афи парк Вороцновский»', subtitle: 'КМ и КМД НВФ, заказчик: Профметалл', img: ongoing3 },
-  { title: 'Корпус инфекционного отделения ЯНАО', subtitle: 'Раскладка облицовки фасада', img: ongoing4 },
-  { title: 'Тарко-Салинская ЦРБ', subtitle: 'Раскладка облицовки фасада', img: ongoing5 },
+  { 
+    title: 'ЖК «СПУТНИК»', 
+    subtitle: 'фасады, смета 2,5 млн ₽, сдано за 3 месяца',
+    description: 'Полный цикл работ по навесным вентилируемым фасадам для ГК «Самолет»',
+    img: imgSputnik 
+  },
+  { 
+    title: 'Капремонт МКД', 
+    subtitle: 'без удорожаний, с гарантией 3 года',
+    description: 'Комплексный ремонт кровли и фасада многоквартирного дома',
+    img: imgHouses 
+  },
+  { 
+    title: 'Промзона «Руднево»', 
+    subtitle: 'КМД фасадов, заказчик: ЗИАС',
+    description: 'Проектирование и монтаж металлоконструкций промышленного объекта',
+    img: imgRudnevo 
+  },
+  { 
+    title: 'Центр инноваций', 
+    subtitle: 'фахверки, заказчик: ГК «Самолет»',
+    description: 'Современные светопрозрачные конструкции и металлокаркас',
+    img: imgCenter 
+  }
 ];
 
 export function Projects() {

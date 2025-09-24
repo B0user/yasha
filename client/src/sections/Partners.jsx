@@ -16,11 +16,7 @@ const partners = [
   { name: 'Партнёр 3', img: partner3 },
   { name: 'Партнёр 4', img: partner4 },
   { name: 'Партнёр 5', img: partner5 },
-  { name: 'Партнёр 6', img: partner6 },
-  { name: 'Партнёр 7', img: partner7 },
-  { name: 'Партнёр 8', img: partner8 },
-  { name: 'Партнёр 9', img: partner9 },
-  { name: 'Партнёр 10', img: partner10 },
+  { name: 'Партнёр 6', img: partner6 }
 ];
 
 export default function Partners() {

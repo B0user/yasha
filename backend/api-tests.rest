@@ -1,0 +1,346 @@
+### UZHNUR-PROJECT Backend API Tests
+### Base URL
+@baseUrl = http://localhost:5000
+@contentType = application/json
+
+###############################################################################
+### 1. HEALTH CHECK
+###############################################################################
+
+### Health Check
+GET {{baseUrl}}/health
+
+###############################################################################
+### 2. CREATE LEADS (POST /api/leads)
+###############################################################################
+
+### Create Lead - Quick Form (Minimal Data)
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "phone": "+79998887766",
+  "form_type": "quick"
+}
+
+### Create Lead - Extended Form (Full Data)
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Иван Петров",
+  "phone": "+79771234567",
+  "email": "ivan.petrov@example.com",
+  "description": "Нужен капитальный ремонт квартиры 120 м². Включая фасадные работы и замену кровли.",
+  "form_type": "extended",
+  "utm": {
+    "source": "yandex",
+    "medium": "cpc",
+    "campaign": "remont_moscow_2024",
+    "content": "ad_variant_3",
+    "term": "ремонт квартиры москва"
+  }
+}
+
+### Create Lead - Callback Form
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Мария Сидорова",
+  "phone": "+79169876543",
+  "form_type": "callback",
+  "utm": {
+    "source": "google",
+    "medium": "organic"
+  }
+}
+
+### Create Lead - With Different UTM Source
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Александр Козлов",
+  "phone": "+79035551122",
+  "email": "alex.kozlov@mail.ru",
+  "description": "Строительство промышленного объекта. Нужна консультация по КМД.",
+  "form_type": "extended",
+  "utm": {
+    "source": "vk",
+    "medium": "social",
+    "campaign": "stroitelstvo_promyshlennye",
+    "content": "post_123"
+  }
+}
+
+### Create Lead - Social Media Source
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Елена Васильева",
+  "phone": "+79261234567",
+  "form_type": "quick",
+  "utm": {
+    "source": "telegram",
+    "medium": "social",
+    "campaign": "fasady_2024"
+  }
+}
+
+###############################################################################
+### 3. VALIDATION TESTS (Should Fail)
+###############################################################################
+
+### Invalid Phone Format (Should Fail)
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Test User",
+  "phone": "89998887766",
+  "form_type": "quick"
+}
+
+### Missing Required Fields (Should Fail)
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Test User",
+  "email": "test@example.com"
+}
+
+### Invalid Form Type (Should Fail)
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "phone": "+79998887766",
+  "form_type": "invalid_type"
+}
+
+### Invalid Email Format (Should Fail)
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "phone": "+79998887766",
+  "email": "invalid-email",
+  "form_type": "quick"
+}
+
+###############################################################################
+### 4. GET LEADS (GET /api/leads)
+###############################################################################
+
+### Get All Leads (Default)
+GET {{baseUrl}}/api/leads
+
+### Get Leads with Pagination
+GET {{baseUrl}}/api/leads?page=1&limit=5
+
+### Filter by Form Type
+GET {{baseUrl}}/api/leads?form_type=extended
+
+### Filter by UTM Source
+GET {{baseUrl}}/api/leads?utm_source=yandex
+
+### Filter by Status
+GET {{baseUrl}}/api/leads?status=new
+
+### Filter by Date Range
+GET {{baseUrl}}/api/leads?date_from=2024-01-01&date_to=2024-12-31
+
+### Complex Filter (Multiple Parameters)
+GET {{baseUrl}}/api/leads?form_type=extended&utm_source=yandex&status=new&page=1&limit=10
+
+###############################################################################
+### 5. GET SINGLE LEAD (GET /api/leads/:id)
+###############################################################################
+
+### Get Single Lead (Replace with actual ID from previous requests)
+# @name getSingleLead
+GET {{baseUrl}}/api/leads/REPLACE_WITH_ACTUAL_LEAD_ID
+
+### Get Non-existent Lead (Should return 404)
+GET {{baseUrl}}/api/leads/507f1f77bcf86cd799439011
+
+###############################################################################
+### 6. UPDATE LEAD STATUS (PATCH /api/leads/:id/status)
+###############################################################################
+
+### Update Lead Status to Contacted
+PATCH {{baseUrl}}/api/leads/REPLACE_WITH_ACTUAL_LEAD_ID/status
+Content-Type: {{contentType}}
+
+{
+  "status": "contacted"
+}
+
+### Update Lead Status to Qualified
+PATCH {{baseUrl}}/api/leads/REPLACE_WITH_ACTUAL_LEAD_ID/status
+Content-Type: {{contentType}}
+
+{
+  "status": "qualified"
+}
+
+### Update Lead Status to Converted
+PATCH {{baseUrl}}/api/leads/REPLACE_WITH_ACTUAL_LEAD_ID/status
+Content-Type: {{contentType}}
+
+{
+  "status": "converted"
+}
+
+### Update Lead Status to Rejected
+PATCH {{baseUrl}}/api/leads/REPLACE_WITH_ACTUAL_LEAD_ID/status
+Content-Type: {{contentType}}
+
+{
+  "status": "rejected"
+}
+
+### Invalid Status Update (Should Fail)
+PATCH {{baseUrl}}/api/leads/REPLACE_WITH_ACTUAL_LEAD_ID/status
+Content-Type: {{contentType}}
+
+{
+  "status": "invalid_status"
+}
+
+###############################################################################
+### 7. ANALYTICS (GET /api/leads/analytics)
+###############################################################################
+
+### Get Analytics Summary (All Time)
+GET {{baseUrl}}/api/leads/analytics
+
+### Get Analytics for Specific Date Range
+GET {{baseUrl}}/api/leads/analytics?date_from=2024-01-01&date_to=2024-12-31
+
+### Get Analytics for Last 30 Days
+GET {{baseUrl}}/api/leads/analytics?date_from=2024-08-24&date_to=2024-09-23
+
+###############################################################################
+### 8. DELETE LEAD (DELETE /api/leads/:id)
+###############################################################################
+
+### Delete Lead (Replace with actual ID)
+DELETE {{baseUrl}}/api/leads/68d2b659b9e48541490a265f
+
+### Delete Non-existent Lead (Should return 404)
+DELETE {{baseUrl}}/api/leads/507f1f77bcf86cd799439011
+
+###############################################################################
+### 9. RATE LIMITING TESTS
+###############################################################################
+
+### Test Rate Limiting (Run this 6 times quickly to trigger rate limit)
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "phone": "+79998887766",
+  "form_type": "quick"
+}
+
+###############################################################################
+### 10. ERROR HANDLING TESTS
+###############################################################################
+
+### Test 404 Route
+GET {{baseUrl}}/api/nonexistent
+
+### Test Invalid JSON
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "phone": "+79998887766",
+  "form_type": "quick",
+  "invalid_json": 
+
+###############################################################################
+### 11. PERFORMANCE TESTS
+###############################################################################
+
+### Large Description Test
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Performance Test User",
+  "phone": "+79998887766",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+  "form_type": "extended"
+}
+
+###############################################################################
+### 12. REALISTIC SCENARIOS
+###############################################################################
+
+### Scenario 1: Yandex Direct Campaign Lead
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Дмитрий Новиков",
+  "phone": "+79165432109",
+  "email": "dmitry.novikov@gmail.com",
+  "description": "Интересует ремонт фасада 9-этажного дома. Площадь около 2000 м². Когда можете приехать на замер?",
+  "form_type": "extended",
+  "utm": {
+    "source": "yandex",
+    "medium": "cpc",
+    "campaign": "fasady_mnogoetazhki",
+    "content": "ad_group_1",
+    "term": "ремонт фасада дома"
+  }
+}
+
+### Scenario 2: Google Organic Lead
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Анна Смирнова",
+  "phone": "+79031234567",
+  "email": "anna.smirnova@yandex.ru",
+  "description": "Нужна консультация по проектированию КМД для промышленного объекта в Подмосковье.",
+  "form_type": "extended",
+  "utm": {
+    "source": "google",
+    "medium": "organic"
+  }
+}
+
+### Scenario 3: Social Media Quick Lead
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Сергей Петров",
+  "phone": "+79267891234",
+  "form_type": "callback",
+  "utm": {
+    "source": "vk",
+    "medium": "social",
+    "campaign": "stroitelstvo_2024",
+    "content": "video_post"
+  }
+}
+
+### Scenario 4: Direct Traffic Lead
+POST {{baseUrl}}/api/leads
+Content-Type: {{contentType}}
+
+{
+  "name": "Ольга Кузнецова",
+  "phone": "+79104567890",
+  "email": "olga.kuznetsova@mail.ru",
+  "description": "Видела ваши работы у соседей. Нужен ремонт кровли частного дома.",
+  "form_type": "extended"
+}

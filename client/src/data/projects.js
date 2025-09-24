@@ -34,4 +34,16 @@ export const smrProjects = [
       // { before: "/smr/before/36.webp", after: "/smr/after/36.webp" },
     ],
   },
+  {
+    id: "repair",
+    title: "Шлифовка поверхности бетонных ступенек в МКД",
+    description:
+      "Шлифовка поверхности бетонных ступенек в МКД по адресу: г. Москва, Проспект Вернадского, 93.",
+    pairs: [
+      { before: "/smr/before/41.webp", after: "/smr/after/41.webp" },
+      { before: "/smr/before/42.webp", after: "/smr/after/42.webp" },
+      { before: "/smr/before/43.webp", after: "/smr/after/43.webp" },
+      { before: "/smr/before/44.webp", after: "/smr/after/44.webp" },
+    ],
+  },
 ];

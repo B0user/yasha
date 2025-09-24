@@ -1,31 +1,16 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { TextField, Button, Stack } from '@mui/material';
+import {
+  createFieldUpdateHandler,
+  createSubmitHandler
+} from '../utils/leadHandlers';
 
 export function CTAForm() {
-  const MAIN_DIRECTOR_EMAIL = 'sfera_krs@mail.ru';
-  const SECOND_DIRECTOR_EMAIL = 'yashar.nuriev@mail.ru';
-
   const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
 
-  const updateField = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const subject = 'Заявка с сайта';
-    const body = [
-      `Имя: ${form.name}`,
-      `Телефон: ${form.phone}`,
-      `Email: ${form.email}`,
-      '',
-      form.message,
-    ].join('\n');
-    const mailto = `mailto:${MAIN_DIRECTOR_EMAIL}?cc=${encodeURIComponent(SECOND_DIRECTOR_EMAIL)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-  };
+  const updateField = createFieldUpdateHandler(setForm);
+  const handleSubmit = createSubmitHandler(form, 'Заявка с сайта');
 
   return (
     <section className="section" id="cta">
@@ -74,7 +59,6 @@ export function CTAForm() {
                 fullWidth
               />
               <Button variant="contained" type="submit">Отправить заявку</Button>
-              <p className="muted">Заявка откроется в вашей почте</p>
             </Stack>
           </form>
         </motion.div>
