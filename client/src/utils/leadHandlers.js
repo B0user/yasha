@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // API Configuration
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://api.uznurpro.ru/api';
 
 
 // Convert input into E.164 (+XXXXXXXX...)

@@ -99,7 +99,7 @@ export function LandingVersion1() {
     
     try {
       console.log(form);
-      const response = await axios.post('http://localhost:2025/api/leads', {
+      const response = await axios.post('https://api.uznurpro.ru/api/leads', {
         name: form.name || '',
         email: form.email || '',
         phone: form.phone || '',
