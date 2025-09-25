@@ -9,6 +9,8 @@ import {
   ReviewsBlock, 
   FinalCTABlock 
 } from '../components/blocks';
+import {SMR} from '../sections/SMR';
+import Partners from '../sections/Partners';
 
 // Данные для лендинга быстрого сбора заявок
 const landingData = {
@@ -302,6 +304,7 @@ const AVTest1Page = () => {
         textColor="white"
       />
 
+
       {/* 2. Почему выбирают нас (УТП) */}
       <BenefitsBlock
         variant="A"
@@ -312,8 +315,10 @@ const AVTest1Page = () => {
         backgroundColor="#f8f9fa"
       />
 
+      <Partners/>
+
       {/* 3. Кейсы «До/После» */}
-      <CasesBlock
+      {/* <CasesBlock
         variant="A"
         title="Наши работы"
         subtitle="Сдано в срок, по смете без удорожаний"
@@ -322,10 +327,9 @@ const AVTest1Page = () => {
         ctaButtonText="Рассчитать стоимость"
         accentColor="#ff6b35"
         backgroundColor="white"
-      />
-
-      {/* 4. Как мы работаем (простой процесс) */}
-      <ProcessBlock
+      /> */}
+        {/* 4. Как мы работаем (простой процесс) */}
+        <ProcessBlock
         variant="A"
         title="Как мы работаем"
         steps={landingData.process}
@@ -333,6 +337,9 @@ const AVTest1Page = () => {
         backgroundColor="#f8f9fa"
       />
 
+      <SMR/>
+
+      
       {/* 5. Отзывы и доверие */}
       <ReviewsBlock
         variant="A"
