@@ -14,7 +14,7 @@ export function SMR() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
         >
-          Строительно-монтажные работы
+          Выполненные строительно-монтажные работы
         </motion.h2>
 
         {/* Responsive grid */}

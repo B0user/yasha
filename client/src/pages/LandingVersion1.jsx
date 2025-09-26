@@ -49,6 +49,7 @@ import {
 import Partners from "../sections/Partners";
 import { Projects } from '../sections/Projects';
 import { Contacts } from '../sections/Contacts';
+import { FinalCTABlock } from '../components/blocks';
 import { SMR } from '../sections/SMR';
 import {
   createFieldUpdateHandler,
@@ -64,6 +65,8 @@ export function LandingVersion1() {
     email: '',
     message: ''
   });
+  
+  const [showSuccess, setShowSuccess] = useState(false);
   
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
@@ -116,6 +119,8 @@ export function LandingVersion1() {
 
       if (response.data.status === 'success') {
         setForm({ name: '', phone: '', email: '', message: '' });
+        setShowSuccess(true);
+        setTimeout(() => setShowSuccess(false), 5000); // Hide after 5 seconds
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -274,7 +279,7 @@ export function LandingVersion1() {
         id="hero"
         sx={{
           minHeight: '100vh',
-          background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
+          background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("/hero/hero1.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',
@@ -300,7 +305,8 @@ export function LandingVersion1() {
                 textAlign: 'center'
               }}
             >
-              Проектирование и строительство промышленных и жилых объектов в Москве и области
+              Ремонт подъездов и инженерных сетей 
+              — смета за 1 день
             </Typography>
             
             <Typography
@@ -354,7 +360,7 @@ export function LandingVersion1() {
                 Назначить консультацию
               </Button>
               
-              <Button
+              {/* <Button
                 variant="text"
                 size="large"
                 startIcon={<Download />}
@@ -367,7 +373,7 @@ export function LandingVersion1() {
                 }}
               >
                 Скачать портфолио проектов
-              </Button>
+              </Button> */}
             </Stack>
           </motion.div>
         </Container>
@@ -649,9 +655,6 @@ export function LandingVersion1() {
         <SMR />
       </Box>
       
-
-      
-
       {/* Contact Form Section */}
       <Container maxWidth="md" sx={{ py: 8 }} id="contact-form">
         <motion.div
@@ -673,6 +676,27 @@ export function LandingVersion1() {
           </Typography>
           
           <Card sx={{ p: 4, boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
+            {showSuccess && (
+              <Box
+                sx={{
+                  bgcolor: '#d4edda',
+                  color: '#155724',
+                  p: 3,
+                  borderRadius: 2,
+                  mb: 3,
+                  border: '1px solid #c3e6cb',
+                  textAlign: 'center'
+                }}
+              >
+                <CheckCircle sx={{ mr: 1, verticalAlign: 'middle' }} />
+                <Typography variant="h6" component="span" sx={{ fontWeight: 'bold' }}>
+                  Спасибо! Ваша заявка успешно отправлена.
+                </Typography>
+                <Typography variant="body2" sx={{ mt: 1 }}>
+                  Мы свяжемся с вами в ближайшее время для обсуждения деталей.
+                </Typography>
+              </Box>
+            )}
             <form onSubmit={handleSubmit}>
               <Stack spacing={3}>
                 <TextField
@@ -817,6 +841,23 @@ export function LandingVersion1() {
                             >
                               +7 (977) 128-41-60
                             </Button>
+                            <Button 
+                              variant="outlined"
+                              size="large"
+                              href="https://wa.me/79771284160"
+                              sx={{ 
+                                borderColor: '#25D366',
+                                color: '#25D366',
+                                mr: 2,
+                                mb: 2,
+                                '&:hover': { 
+                                  borderColor: '#25D366',
+                                  bgcolor: '#25D36610'
+                                }
+                              }}
+                            >
+                              WhatsApp
+                            </Button>
                             <Button
                               variant="outlined"
                               startIcon={<Email />}
@@ -843,6 +884,23 @@ export function LandingVersion1() {
                               sx={{ bgcolor: '#27ae60', '&:hover': { bgcolor: '#229954' } }}
                             >
                               +7 (927) 282-24-30
+                            </Button>
+                            <Button 
+                              variant="outlined"
+                              size="large"
+                              href="https://wa.me/79272822430"
+                              sx={{ 
+                                borderColor: '#25D366',
+                                color: '#25D366',
+                                mr: 2,
+                                mb: 2,
+                                '&:hover': { 
+                                  borderColor: '#25D366',
+                                  bgcolor: '#25D36610'
+                                }
+                              }}
+                            >
+                              WhatsApp
                             </Button>
                             <Button
                               variant="outlined"

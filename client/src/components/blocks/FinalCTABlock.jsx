@@ -26,6 +26,7 @@ import { CTAForm } from '../forms/CTAForm';
 
 // 8. Финальный блок CTA - 3 варианта
 export const FinalCTABlock = ({ 
+  id = 'contact-form',
   variant = 'A',
   title = 'Готовы начать ремонт?',
   subtitle = 'Оставьте заявку и получите бесплатную консультацию уже сегодня',
@@ -49,7 +50,7 @@ export const FinalCTABlock = ({
 
   // Вариант A: Форма + преимущества
   const VariantA = () => (
-    <Box sx={{ py: 8, bgcolor: backgroundColor, color: textColor, ...sx }}>
+    <Box id={id} sx={{ py: 8, bgcolor: backgroundColor, color: textColor, ...sx }}>
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
           {/* Левая часть - текст и преимущества */}
