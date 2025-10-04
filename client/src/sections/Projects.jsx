@@ -18,6 +18,8 @@ import ongoing2 from '../assets/projects/ongoingproject2.webp';
 import ongoing3 from '../assets/projects/ongoingproject3.webp';
 import ongoing4 from '../assets/projects/ongoingproject4.webp';
 import ongoing5 from '../assets/projects/ongoingproject5.webp';
+import ongoing61 from '../assets/projects/ongoingproject61.webp';
+import ongoing62 from '../assets/projects/ongoingproject62.webp';
 
 const completed = [
   { 
@@ -43,7 +45,50 @@ const completed = [
     subtitle: 'фахверки, заказчик: ГК «Самолет»',
     description: 'Современные светопрозрачные конструкции и металлокаркас',
     img: imgCenter 
+  },
+];
+
+const ongoing = [
+  { 
+    title: 'Разработка визуализации КМ', 
+    subtitle: 'г. Москва, Ульяновский Лесопарк, вл. 2',
+    description: 'Разработка визуализации с последующей разработкой рабочей документации конструкции металлические "КМ"',
+    images: [ongoing61, ongoing62]
   }
+];
+
+
+const add_or_not = [
+  { 
+    title: 'Проект 1', 
+    subtitle: 'Разработка 1',
+    description: 'В разработке',
+    images: [ongoing1]
+  },
+  { 
+    title: 'Проект 2', 
+    subtitle: 'Разработка 2',
+    description: 'В разработке',
+    images: [ongoing2]
+  },
+  { 
+    title: 'Проект 3', 
+    subtitle: 'Разработка 3',
+    description: 'В разработке',
+    images: [ongoing3]
+  },
+  { 
+    title: 'Проект 4', 
+    subtitle: 'Разработка 4',
+    description: 'В разработке',
+    images: [ongoing4]
+  },
+  { 
+    title: 'Проект 5', 
+    subtitle: 'Разработка 5',
+    description: 'В разработке',
+    images: [ongoing5]
+  },
 ];
 
 export function Projects() {
@@ -62,17 +107,17 @@ export function Projects() {
         height: "100%",
         maxWidth: { xs: "24em", md: "100%" }, }}>
           <Swiper
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-            spaceBetween={24}
-            slidesPerView={1}
-            breakpoints={{
-              900: { slidesPerView: 3 },
-              600: { slidesPerView: 2 }
-            }}
-            style={{ paddingBottom: "40px" }}
-          >
-            {completed.map((p, idx) => (
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+          spaceBetween={24}
+          slidesPerView={1}
+          breakpoints={{
+            900: { slidesPerView: 3 },
+            600: { slidesPerView: 2 }
+          }}
+          style={{ paddingBottom: "40px" }}
+          >   
+            {[...completed, ...ongoing].map((p, idx) => (
               <SwiperSlide key={p.title}>
                 <motion.div
                   className="gallery-card"
@@ -81,7 +126,23 @@ export function Projects() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
                 >
-                  <img src={p.img} alt={p.title} style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 8 }} />
+                  {p.images ? (
+                    <Swiper
+                      modules={[Pagination, Navigation]}
+                      pagination={{ clickable: true }}
+                      
+                      style={{ width: "100%", height: 220, borderRadius: 8 }}
+                    >
+                      {p.images.map((img, i) => (
+                        <SwiperSlide key={i}>
+                          <img src={img} alt={`${p.title}-${i}`} style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 8 }} />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <img src={p.img} alt={p.title} style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 8 }} />
+                  )}
+                  
                   <div className="info">
                     <div className="card-title">{p.title}</div>
                     <div className="muted">{p.subtitle}</div>
@@ -90,7 +151,67 @@ export function Projects() {
               </SwiperSlide>
             ))}
           </Swiper>
+
         </Box>
+
+        {/* <motion.h2
+          className="section-title"
+          initial={{ y: 12, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          В разработке
+        </motion.h2>
+        <Box sx={{ 
+        height: "100%",
+        maxWidth: { xs: "24em", md: "100%" }, }}>
+          <Swiper
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+          spaceBetween={24}
+          slidesPerView={1}
+          breakpoints={{
+            900: { slidesPerView: 3 },
+            600: { slidesPerView: 2 }
+          }}
+          style={{ paddingBottom: "40px" }}
+          >   
+            {add_or_not.map((p, idx) => (
+              <SwiperSlide key={p.title}>
+                <motion.div
+                  className="gallery-card"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                >
+                  {p.images ? (
+                    <Swiper
+                      modules={[Pagination, Navigation]}
+                      pagination={{ clickable: true }}
+                      
+                      style={{ width: "100%", height: 220, borderRadius: 8 }}
+                    >
+                      {p.images.map((img, i) => (
+                        <SwiperSlide key={i}>
+                          <img src={img} alt={`${p.title}-${i}`} style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 8 }} />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <img src={p.img} alt={p.title} style={{ width: "100%", height: 220, objectFit: "cover", borderRadius: 8 }} />
+                  )}
+                  
+                  <div className="info">
+                    <div className="card-title">{p.title}</div>
+                    <div className="muted">{p.subtitle}</div>
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+        </Box> */}
         
       </div>
     </section>
